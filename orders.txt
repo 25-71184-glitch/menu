@@ -1,0 +1,2 @@
+{"order_num": 1, "dt": "2026-05-21 05:42:38", "cust_name": "Dave", "type": "delivery", "loc": "BRGY WAWA", "items": [{"n": "Crispy Queen", "q": 1, "p": 90, "s": 90}, {"n": "Bacon me Blush", "q": 1, "p": 85, "s": 85}, {"n": "Kiss me, Katsu", "q": 1, "p": 85, "s": 85}], "sub": 260, "df": 20, "tot": 280}
+{"order_num": 2, "dt": "2026-05-21 05:44:15", "cust_name": "maui", "type": "pickup", "loc": "BRGY WAWA", "items": [{"n": "Pretty in Shanghai", "q": 1, "p": 70, "s": 70}], "sub": 70, "df": 0, "tot": 70}

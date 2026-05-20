@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>𝙲𝙷𝙾𝚆𝚀𝚄𝙴𝚃𝚃𝙴</title>
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body><div class="container">
+<header><h1>𝙲𝙷𝙾𝚆𝚀𝚄𝙴𝚃𝚃𝙴</h1><p>𝒮𝐿𝒜𝒴 𝒮𝒜𝑅𝒜𝒫</p></header>
+
+<div class="grid">
+<section><h2>📋 Menu</h2>
+<div class="mh"><span>Item</span><span class="pl">PRICE</span><span>Qty</span></div>
+{%for n,p in menu.items()%}<div class="item"><span>{{n}}</span><span class="pv">₱{{p}}</span><input type="number" min="0" value="0" onchange="updOrd('{{n}}',{{p}},this.value)"></div>{%endfor%}
+</section>
+
+<section><h2>🛒 Order</h2>
+<div class="fg"><label>Customer Name:</label><input id="cname" placeholder="Enter name" required></div>
+<div class="ot"><label><input type="radio" name="ot" value="pickup" checked onchange="togLoc()"> Pick Up</label><label><input type="radio" name="ot" value="delivery" onchange="togLoc()"> Delivery</label></div>
+<div id="locf" style="display:none"><input id="loc" placeholder="Delivery location"></div>
+<div id="sum" class="box"><p>No items</p></div>
+<p>Subtotal: <span id="sub">₱0</span></p><p id="df" style="display:none">Delivery: ₱20</p>
+<p><strong>Total: <span id="tot">₱0</span></strong></p>
+<button class="btn p" onclick="submitOrd()">Place Order</button>
+<button class="btn c" onclick="clrOrd()">Clear</button>
+</section>
+</div>
+
+<section><h2>📊 Order History</h2>
+<button class="btn v" onclick="viewOrd()">View All Orders</button>
+<div id="sumary" class="sum-box" style="display:none"><p><strong>Sum of Sales:</strong> ₱<span id="ts">0.00</span></p><p><strong>Sum of Delivery Fee:</strong> ₱<span id="td">0.00</span></p></div>
+<div id="olist" class="box"></div>
+</section>
+
+<section><h2>🧾 Receipt History</h2>
+<button class="btn v" onclick="viewRec()">View All Receipts</button>
+<div id="rlist" class="box"></div>
+</section>
+
+<div id="mod" class="mod"><div class="mod-content"><span class="close" onclick="closeMod()">&times;</span><div id="rec-body"></div><button class="btn pr" onclick="window.print()">🖨️ Print</button></div></div>
+
+<script src="{{url_for('static',filename='script.js')}}"></script>
+</div></body></html>
